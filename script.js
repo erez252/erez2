@@ -14,6 +14,6 @@ document.getElementById("button").onclick = function(){
         document.getElementById("span").textContent = temp + "°C"
     }
     else{
-        document.getElementById("span").textContent = "לא בחרת טמפרורה להמיר עליו"
+        document.getElementById("span").textContent = "לא בחרת טמפרורה להמיר אליו"
     }
 }
