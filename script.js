@@ -12,7 +12,7 @@ document.getElementById("button").onclick = function(){
     else{
         temp = "u did no select temp";
     }
-    let temp = Math.round(temp * 100) / 100;
+    temp = Math.round(temp * 100) / 100;
     document.getElementById("span").textContent = temp
 }
 
