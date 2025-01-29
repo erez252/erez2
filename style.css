@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+
+}
+
+body{
+    min-height: 100%;
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 4rem;
+}
+
+#converttext{
+    margin-bottom: -30px;
+}
+
+#span{
+    display: block;
+    overflow: auto;
+    max-width: 80%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(105, 132, 221);
+    background: linear-gradient(to right, rgb(0, 255, 255), rgb(0, 150, 150))
+}
+
+button:hover{
+    box-shadow: 1px 1px 5px rgb(129, 128, 128) inset;
+    padding: 5px 8px;
+    background-color: rgb(204, 204, 204);
+    font-weight: bolder;
+}
+
+#input{
+    background: linear-gradient(to left, rgb(0, 255, 255), rgb(0, 150, 150));
+    text-align: center;
+    box-shadow: 1px 1px 5px rgb(129, 128, 128) inset;
+    padding: 3px;
+    width: 20vw;
+    min-width: 150px;
+    max-width: 200px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* input{
+    display: inline-block;
+    font-size: 60px;
+} */
+
+.radio_continer{
+    display: flex;
+    vertical-align: middle;
+}
+
+
+#F, #C{
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    margin: 0px 15px 15px 0px;
+    vertical-align: middle;
+    border: 4px dotted rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: background-color 0.3s ease;
+}
+
+#F:checked, #C:checked{
+    border: 5px solid rgb(133, 133, 133);
+    background-color: aqua;
+}
+
+
+#F:checked::before, #C:checked::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+#F:hover:not(:checked), #C:hover:not(:checked){
+    border: 5px solid rgb(133, 133, 133);
+    border-color: aqua;
+}
+
+#F:active:not(:checked), #C:active:not(:checked), #F:focus:not(:checked), #C:focus:not(:checked){
+    outline: 4px solid #ffffff;
+}
+
+@media (max-width: 600px) {
+    body {
+      font-size: 12vw;
+    }
+    button {
+        font-size: 10vw;
+      }
+    
+      #F, #C {
+        width: 15vw;
+        height: 15vw;
+      }
+  }
