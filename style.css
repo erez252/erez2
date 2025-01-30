@@ -30,6 +30,8 @@ body{
 }
 
 #span{
+    text-align: center;
+    font-size: clamp(2.5rem, 2.5vw + 0.25rem, 1rem);
     display: block;
     overflow: auto;
     max-width: 80%;
@@ -119,7 +121,7 @@ main button:hover{
     outline: 4px solid #ffffff;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 533px) {
     body {
       font-size: 12vw;
     }
