@@ -10,6 +10,8 @@ document.getElementById("heb").onclick = function(){
         document.getElementById("textC").textContent = "צלזיוס"
         document.getElementById("textF").textContent = "פרנהייט"
         document.getElementById("button").textContent = "תחשב"
+        document.getElementById("span").setAttribute("dir", "rtl");
+
 
     }
     else{
@@ -19,6 +21,7 @@ document.getElementById("heb").onclick = function(){
         document.getElementById("textC").textContent = "C"
         document.getElementById("textF").textContent = "F"
         document.getElementById("button").textContent = "calculate"
+        document.getElementById("span").setAttribute("dir", "ltr");
         heb = false
     }
 }
