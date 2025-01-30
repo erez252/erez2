@@ -5,7 +5,7 @@ window.onload = function () {
     // Get the user's preferred language (e.g., 'en', 'he')
     userLang = navigator.language || navigator.userLanguage;
     console.log(userLang);
-    if(userLang == "he-IL"){
+    if(userLang == "he"){
         lang = "heb"
         document.getElementById("heb").classList.toggle("hidden");
         changetohe()
