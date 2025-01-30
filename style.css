@@ -150,4 +150,12 @@ main button:hover{
      padding: 2px 10px ;
      font-size: 5vw;
 }
+
+
 }
+
+@-moz-document url-prefix() {
+    #converttext {
+      margin: 30px;
+    }
+  }
