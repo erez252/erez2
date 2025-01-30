@@ -1,28 +1,49 @@
-let heb = false;
-console.log(heb);
+let userLang;
+let lang;
 
-document.getElementById("heb").onclick = function(){
-    if(heb == false){
-        heb = true
-        document.getElementById("heb").textContent = "english"
-        document.getElementById("temp").textContent = ":טמפרטורה"
-        document.getElementById("converttext").textContent = ":המר ל"
-        document.getElementById("textC").textContent = "צלזיוס"
-        document.getElementById("textF").textContent = "פרנהייט"
-        document.getElementById("button").textContent = "תחשב"
-
-
+window.onload = function () {
+    // Get the user's preferred language (e.g., 'en', 'he')
+    userLang = navigator.language || navigator.userLanguage;
+    console.log(userLang);
+    if(userLang == "he-IL"){
+        lang = "heb"
+        document.getElementById("heb").classList.toggle("hidden");
+        changetohe()
     }
     else{
-        document.getElementById("heb").textContent = "עברית"
+        lang = "eng"
+        document.getElementById("eng").classList.toggle("hidden");
+    }
+}
+
+document.getElementById("heb").onclick = function(){
+        changetohe()
+        lang = "heb"
+        toggleLanguages()
+}
+
+document.getElementById("eng").onclick = function(){
         document.getElementById("temp").textContent = "temp:"
         document.getElementById("converttext").textContent = "convert to:"
         document.getElementById("textC").textContent = "C"
         document.getElementById("textF").textContent = "F"
         document.getElementById("button").textContent = "calculate"
-        document.getElementById("span").setAttribute("dir", "ltr");
-        heb = false
-    }
+        lang = "eng"
+        toggleLanguages()
+}
+
+function changetohe(){
+    document.getElementById("temp").textContent = ":טמפרטורה"
+    document.getElementById("converttext").textContent = ":המר ל"
+    document.getElementById("textC").textContent = "צלזיוס"
+    document.getElementById("textF").textContent = "פרנהייט"
+    document.getElementById("button").textContent = "תחשב"
+    lang = "heb"
+} 
+
+function toggleLanguages() {
+    document.getElementById("heb").classList.toggle("hidden");
+    document.getElementById("eng").classList.toggle("hidden");
 }
 
 document.getElementById("button").onclick = function(){
@@ -39,13 +60,12 @@ document.getElementById("button").onclick = function(){
             document.getElementById("span").textContent = temp + "°C"
         }
         else{
-            if(heb == false){
-                temp = "u did no select temp";
+            if(lang == "eng"){
+                temp = "you did not select a temp to convert to";
             }
-            else if(heb == true){
+            else if(lang == "heb"){
                 temp = "לא בחרת טמפרורה להמיר אליו";
             }
             document.getElementById("span").textContent = temp
-            console.log(heb);
             }
         }
