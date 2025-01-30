@@ -122,10 +122,6 @@ main button:hover{
 }
 
 @media (max-width: 533px) {
-    #heb{
-        padding: 2px 10px ;
-        font-size: 20px;
-    }
     body {
       font-size: 12vw;
     }
@@ -138,3 +134,10 @@ main button:hover{
         height: 15vw;
       }
   }
+
+@media (max-width: 768px) {
+   #heb{
+     padding: 2px 10px ;
+     font-size: 25px;
+}
+}
