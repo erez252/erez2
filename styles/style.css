@@ -43,7 +43,7 @@ body{
 
 #span{
     text-align: center;
-    font-size: clamp(2.5rem, 2.5vw + 0.25rem, 1rem);
+    font-size: clamp(3rem, 2.5vw + 0.25rem, 1rem);
     display: block;
     overflow: auto;
     max-width: 80%;
@@ -91,13 +91,29 @@ main button:hover{
     display: flex;
     vertical-align: middle;
 }
+#CAndF{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+#textF, #textC{
+    /* outline: 1px solid green; */
+    /* overflow: hidden; */
+    line-height: 0.9;
+    /* text-align: center; */
+    /* align-self: center; */
+}
 
 
 #F, #C{
     appearance: none;
     cursor: pointer;
     position: relative;
-    margin: 0px 15px 15px 0px;
+    margin: 0px 15px 15px 15px;
     vertical-align: middle;
     border: 4px dotted rgb(255, 255, 255);
     border-radius: 50%;
@@ -158,7 +174,7 @@ main button:hover{
     }
   }
 
-@media (max-width: 533px) {
+@media (max-width: 650px) {
     body {
       font-size: 12vw;
     }
@@ -167,8 +183,8 @@ main button:hover{
       }
     
       #F, #C {
-        width: 15vw;
-        height: 15vw;
+        width: 12vw;
+        height: 12vw;
       }
   }
 
