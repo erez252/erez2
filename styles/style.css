@@ -70,7 +70,9 @@ main button:hover{
     font-weight: bolder;
 }
 
+
 #input{
+    display: inline-block;
     background: linear-gradient(to left, rgb(0, 255, 255), rgb(0, 150, 150));
     text-align: center;
     box-shadow: 1px 1px 5px rgb(129, 128, 128) inset;
@@ -80,6 +82,7 @@ main button:hover{
     max-width: 200px;
     border-radius: 10px;
     font-weight: bold;
+    margin: 0;
 }
 
 /* input{
