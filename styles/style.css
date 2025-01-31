@@ -133,6 +133,31 @@ main button:hover{
     outline: 4px solid #ffffff;
 }
 
+.loading-bar-container {
+    width: 80%;
+    height: 12px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .loading-bar {
+    width: 0%;
+    height: 100%;
+    background-color: aqua;
+    animation: loading-animation 10s infinite;
+  }
+  @keyframes loading-animation {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+
 @media (max-width: 533px) {
     body {
       font-size: 12vw;
