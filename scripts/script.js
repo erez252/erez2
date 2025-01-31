@@ -2,6 +2,14 @@ let userLang = navigator.language;
 userLang = userLang.split("-")[0];
 let temp;
 
+document.getElementById("C").onclick = function(){
+    document.getElementById("deg").textContent = "°F"
+}
+
+document.getElementById("F").onclick = function(){
+    document.getElementById("deg").textContent = "°C"
+}
+
 document.getElementById("button").onclick = function(){ //שלוחצים על הכפתור
     let input = Number(document.getElementById("input").value); //בודק מה הטפרטורה ששמת
         if(document.getElementById("F").checked){ // F-אם להמיר ל
