@@ -15,7 +15,7 @@ document.getElementById("F").onclick = function(){
 
 document.getElementById("button").onclick = function(){ //שלוחצים על הכפתור
     let input = Number(document.getElementById("input").value); //בודק מה הטפרטורה ששמת
-    let pagelang = window.location.pathname.split("/").filter(Boolean)[0];
+    let pagelang = window.location.pathname.split("/").filter(Boolean)[1];
     if (!pagelang) {
         pagelang = "en";
     }
