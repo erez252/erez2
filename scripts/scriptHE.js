@@ -15,7 +15,7 @@ document.getElementById("button").onclick = function(){ //שלוחצים על ה
             document.getElementById("span").textContent = temp + "°C"; //מעדכן את הטקסט על המסך
         }
         else{
-            temp = "you did not select a temp to convert to";
+            temp = "לא בחרת טמפרורה להמיר אליו";
             document.getElementById("span").textContent = temp; //מעדכן את הטקסט על המסך
         }
 }
