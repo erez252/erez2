@@ -7,6 +7,9 @@ document.getElementById("input").value = localStorage.getItem(`input`) || 1;
 document.body.classList.add("no-transition")
 document.getElementById("hide_theme").classList.add("no-transition");
 
+
+
+
 if(localStorage.getItem("dark")){
     document.body.classList.add("dark")
 }
@@ -15,7 +18,11 @@ else if(window.matchMedia("(prefers-color-scheme: dark)").matches &&!(localStora
 }
 else{
     document.body.classList.remove("dark")
-}
+};
+
+if(localStorage.getItem("accept-cookies")){
+    document.getElementById('cookie-banner').style.display = 'none';
+};
 
 document.getElementById("theme_buttons_con").onclick = function(){
     document.body.classList.toggle("dark")
@@ -41,6 +48,11 @@ document.getElementById("C").onclick = function(){
 document.getElementById("F").onclick = function(){
     document.getElementById("deg").textContent = "°C"
 }
+
+document.getElementById('accept-cookies').onclick = function() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem("accept-cookies", true);
+};
 
 document.getElementById("button").onclick = function(){
     let input = Number(document.getElementById("input").value);

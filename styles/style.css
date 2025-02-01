@@ -11,10 +11,18 @@
   transition: none;
 }
 
+.hidden{
+  display: none;
+}
 
 body{
   --text-color: rgb(0, 0, 0);
   --background-color: rgb(255, 255, 255);
+  min-height: 100%;
+  font-family: sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 4rem;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -26,6 +34,7 @@ body.dark{
 
 }
 
+
 #theme_buttons_con {
   user-select: none;
   border-radius: 15px;
@@ -35,33 +44,29 @@ body.dark{
   gap: 10px;
   width: fit-content;
   cursor: pointer; 
-  align-items: center; /* Align items vertically */
+  align-items: center;
   bottom: 10px;
   left: 20px;
 }
 
 
-.theme_buttons {
-/* Indicate clickable buttons */
+.theme_buttons{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 40px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
+  width: 40px;
+  height: 40px;
 }
 
 
 #theme_buttons_con svg{
   fill: var(--text-color);
-  transition: fill 0.2s ease;
+  transition: fill 0.3s ease;
 }
 
-body.dark #theme_buttons_con{
-  border: 2px solid var(--text-color);
-}
 
-body.dark #theme_buttons_con svg{
-  fill: var(--text-color);
+body.dark #hide_theme{
+  left: 78%;
 }
 
 #hide_theme {
@@ -70,214 +75,244 @@ body.dark #theme_buttons_con svg{
   height: 25px;
   width: 25px;
   background-color: var(--text-color);
-  top: 50%; /* Center vertically */
+  top: 50%; 
   left: 22%;
   transform: translate(-50%, -50%);
-  transition: all 0.3s ease; /* Smooth transition for movement */
+  transition: all 0.3s ease;
 }
 
-body.dark #hide_theme{
-  left: 78%;
-  background-color: var(--text-color);
-}
+
 
 .langbut{
-    color: var(--text-color);
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
-    display: inline-block;
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    background-color: gray;
-    border-radius: 10px;
-    padding: 2px 10px ;
-    font-size: 40px;
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  background-color: gray;
+  border-radius: 10px;
+  padding: 2px 10px;
+  font-size: 40px;
 }
-.hidden{
-    display: none;
-}
+
+
 
 .langbut:hover{
-    background-color: rgb(82, 82, 82);
-    font-weight: bold;
+  background-color: rgb(82, 82, 82);
+  font-weight: bold;
 }
 
-body{
-    min-height: 100%;
-    font-family: sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-size: 4rem;
-}
 
 #converttext{
-    margin-bottom: -30px;
+  margin-bottom: -30px;
 }
 
 #span{
-    text-align: center;
-    font-size: clamp(3rem, 2.5vw + 0.25rem, 1rem);
-    display: block;
-    overflow: auto;
-    max-width: 80%;
+  text-align: center;
+  font-size: clamp(3rem, 2.5vw + 0.25rem, 1rem);
+  display: block;
+  overflow: auto;
+  max-width: 80%;
 }
 
 main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 main button{
-    margin: 10px;
-    padding: 5px 10px;
-    border-radius: 10px;
-    border: 2px solid rgb(105, 132, 221);
-    background: linear-gradient(to right, rgb(0, 255, 255), rgb(0, 150, 150))
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid rgb(105, 132, 221);
+  background: linear-gradient(to right, rgb(0, 255, 255), rgb(0, 150, 150))
 }
 
 main button:hover{
-    box-shadow: 1px 1px 5px rgb(129, 128, 128) inset;
-    padding: 5px 8px;
-    background-color: rgb(204, 204, 204);
-    font-weight: bolder;
+  box-shadow: 1px 1px 5px rgb(129, 128, 128) inset;
+  padding: 5px 8px;
+  background-color: rgb(204, 204, 204);
+  font-weight: bolder;
 }
 
 
 #input{
-    display: inline-block;
-    background: linear-gradient(to left, rgb(0, 255, 255), rgb(0, 150, 150));
-    text-align: center;
-    box-shadow: 1px 1px 5px rgb(129, 128, 128) inset;
-    padding: 3px;
-    width: 20vw;
-    min-width: 150px;
-    max-width: 200px;
-    border-radius: 10px;
-    font-weight: bold;
-    margin: 0;
+  display: inline-block;
+  background: linear-gradient(to left, rgb(0, 255, 255), rgb(0, 150, 150));
+  text-align: center;
+  box-shadow: 1px 1px 5px rgb(129, 128, 128) inset;
+  padding: 3px;
+  width: 20vw;
+  min-width: 150px;
+  max-width: 200px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
-/* input{
-    display: inline-block;
-    font-size: 60px;
-} */
 
 .radio_continer{
-    display: flex;
-    vertical-align: middle;
+  display: flex;
+  vertical-align: middle;
 }
 #CAndF{
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
 
 #textF, #textC{
-    /* outline: 1px solid green; */
-    /* overflow: hidden; */
-    line-height: 0.9;
-    /* text-align: center; */
-    /* align-self: center; */
+  line-height: 0.9;
 }
 
 
 #F, #C{
-    appearance: none;
-    cursor: pointer;
-    position: relative;
-    margin: 0px 15px 15px 15px;
-    vertical-align: middle;
-    border: 4px dotted var(--text-color);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    transition: background-color 0.3s ease;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  margin: 0px 15px 15px 15px;
+  vertical-align: middle;
+  border: 4px dotted var(--text-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  transition: background-color 0.3s ease;
 }
 
 #F:checked, #C:checked{
-    border: 5px solid rgb(133, 133, 133);
-    background-color: aqua;
+  border: 5px solid rgb(133, 133, 133);
+  background-color: aqua;
 }
 
 
 #F:checked::before, #C:checked::before{
-    content: "";
-    position: absolute;
-    background-color: var(--background-color);
-    height: 30px;
-    width: 30px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
+  content: "";
+  position: absolute;
+  background-color: var(--text-color);
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
 
 #F:hover:not(:checked), #C:hover:not(:checked){
-    border: 5px solid rgb(133, 133, 133);
-    border-color: aqua;
+  border: 5px solid rgb(133, 133, 133);
+  border-color: aqua;
 }
 
 #F:active:not(:checked), #C:active:not(:checked){
-    outline: 4px solid #ffffff;
+ outline: 4px solid #ffffff;
 }
 
-.loading-bar-container {
-    width: 80%;
-    height: 12px;
-    background-color: white;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  .loading-bar {
+.loading-bar-container{
+  width: 80%;
+  height: 12px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.loading-bar{
+  width: 0%;
+  height: 100%;
+  background-color: aqua;
+  animation: loading-animation 10s infinite;
+}
+
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  z-index: 10;
+  box-shadow: 0 5px 8px var(--text-color);
+}
+
+#accept-cookies {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#accept-cookies:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Make sure the text wraps nicely on smaller screens */
+#cookie-banner p {
+  font-size: 14px;
+}
+
+@keyframes loading-animation {
+  0% {
     width: 0%;
-    height: 100%;
-    background-color: aqua;
-    animation: loading-animation 10s infinite;
   }
-  @keyframes loading-animation {
-    0% {
-      width: 0%;
-    }
-    50% {
-      width: 100%;
-    }
-    100% {
-      width: 50%;
-    }
+  50% {
+    width: 100%;
   }
+  100% {
+    width: 50%;
+    }
+}
 
 @media (max-width: 650px) {
-    body {
-      font-size: 12vw;
-    }
-     main button {
-        font-size: 10vw;
-      }
-    
-      #F, #C {
-        width: 12vw;
-        height: 12vw;
-      }
+  body {
+    font-size: 12vw;
   }
 
-@media (max-width: 768px) {
-   .langbut{
-     padding: 2px 10px ;
-     font-size: 5vw;
+  main button {
+    font-size: 10vw;
+  }
+    
+  #F, #C {
+    width: 12vw;
+    height: 12vw;
+    }
+
+  #F:checked::before, #C:checked::before{
+    height: 5.2vw;
+    width: 5.2vw;
+  }
+
+  #F:checked, #C:checked{
+    border: 1.2vw solid rgb(133, 133, 133);
+    background-color: aqua;
+  }
+
+  #theme_buttons_con {
+    gap: 0;
+  }
 }
 
 
+@media (max-width: 768px) {
+  .langbut{
+    padding: 2px 10px ;
+    font-size: 5vw;
+  }
 }
 
 @-moz-document url-prefix() {
-    #converttext {
-      margin: 30px;
-    }
+  #converttext {
+    margin: 30px;
   }
+}
