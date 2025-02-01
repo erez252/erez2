@@ -27,6 +27,12 @@ else{
     document.getElementsByClassName('langbut')[0].style.bottom = document.getElementById("cookie-banner").offsetHeight + 10 + "px";
 }
 
+document.getElementById('accept-cookies').onclick = function() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem("accept-cookies", true);
+    document.getElementsByClassName('langbut')[0].style.bottom = "10px";
+}
+
 document.getElementById("theme_buttons_con").onclick = function(){
     document.body.classList.toggle("dark")
 
@@ -40,23 +46,31 @@ document.getElementById("theme_buttons_con").onclick = function(){
     }
 }
 
+if(localStorage.getItem(`deg_select`) == `C`){
+    document.getElementById("C").checked = true
+}
+
+if(localStorage.getItem(`deg_select`) == `F`){
+    document.getElementById("F").checked = true
+}
+
 setTimeout(function() {
     document.body.classList.remove("no-transition");
 }, 10);
 
+
+
 document.getElementById("C").onclick = function(){
     document.getElementById("deg").textContent = "°F"
+    localStorage.setItem(`deg_select`, `C`)
 }
 
 document.getElementById("F").onclick = function(){
     document.getElementById("deg").textContent = "°C"
+    localStorage.setItem(`deg_select`, `F`)
 }
 
-document.getElementById('accept-cookies').onclick = function() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    localStorage.setItem("accept-cookies", true);
-    document.getElementsByClassName('langbut')[0].style.bottom = "10px";
-};
+
 
 document.getElementById("button").onclick = function(){
     let input = Number(document.getElementById("input").value);
