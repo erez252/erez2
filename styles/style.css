@@ -319,6 +319,15 @@ main button:hover{
   #theme_buttons_con {
     gap: 0;
   }
+
+  #hide_theme {
+    left: 25%;
+  }
+
+  body.dark  #hide_theme{
+    left: 75%;
+  }
+  
 }
 
 
