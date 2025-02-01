@@ -37,7 +37,7 @@ body.dark{
 
 #theme_buttons_con {
   user-select: none;
-  border-radius: 15px;
+  border-radius: 20px;
   border: 2px solid var(--text-color);
   position: absolute;
   display: flex;
@@ -47,6 +47,8 @@ body.dark{
   align-items: center;
   bottom: 10px;
   left: 20px;
+  background-color: var(--background-color);
+  z-index: -2;
 }
 
 
@@ -60,8 +62,9 @@ body.dark{
 
 
 #theme_buttons_con svg{
-  fill: var(--text-color);
+  fill: var(--background-color);
   transition: fill 0.3s ease;
+  z-index: 5;
 }
 
 
@@ -69,16 +72,26 @@ body.dark #hide_theme{
   left: 78%;
 }
 
+body:not(.dark) #dark_mode svg {
+  fill: var(--text-color);
+}
+
+body.dark #light_mode svg {
+  fill: var(--text-color);
+}
+
+
 #hide_theme {
   border-radius: 50%;
   position: absolute;
-  height: 25px;
-  width: 25px;
+  height: 34px;
+  width: 34px;
   background-color: var(--text-color);
   top: 50%; 
   left: 22%;
   transform: translate(-50%, -50%);
-  transition: all 0.3s ease;
+  transition: left 0.3s ease;
+  z-index: -1;
 }
 
 
@@ -239,6 +252,11 @@ main button:hover{
   font-size: 16px;
   z-index: 10;
   box-shadow: 0 5px 8px var(--text-color);
+}
+
+#cookie-banner a{
+  color: rgb(95, 151, 255);
+  text-align: center;
 }
 
 #accept-cookies {
