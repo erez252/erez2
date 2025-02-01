@@ -24,8 +24,7 @@ if(localStorage.getItem("accept-cookies")){
     document.getElementById('cookie-banner').style.display = 'none';
 }
 else{
-    document.getElementsByClassName('langbut')[0].style.bottom = "110px";
-    document.getElementById("theme_buttons_con").style.bottom = "110px";
+    document.getElementsByClassName('langbut')[0].style.bottom = document.getElementById("cookie-banner").offsetHeight + 10 + "px";
 }
 
 document.getElementById("theme_buttons_con").onclick = function(){
@@ -57,7 +56,6 @@ document.getElementById('accept-cookies').onclick = function() {
     document.getElementById('cookie-banner').style.display = 'none';
     localStorage.setItem("accept-cookies", true);
     document.getElementsByClassName('langbut')[0].style.bottom = "10px";
-    document.getElementById("theme_buttons_con").style.bottom = "10px";
 };
 
 document.getElementById("button").onclick = function(){
