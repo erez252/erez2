@@ -49,6 +49,7 @@ body.dark{
   left: 20px;
   background-color: var(--background-color);
   z-index: -2;
+  user-select: none;
 }
 
 
@@ -142,7 +143,8 @@ main button{
   padding: 5px 10px;
   border-radius: 10px;
   border: 2px solid rgb(105, 132, 221);
-  background: linear-gradient(to right, rgb(0, 255, 255), rgb(0, 150, 150))
+  background: linear-gradient(to right, rgb(0, 255, 255), rgb(0, 150, 150));
+  user-select: none;
 }
 
 main button:hover{
@@ -275,7 +277,7 @@ main button:hover{
   background-color: #45a049;
 }
 
-/* Optional: Make sure the text wraps nicely on smaller screens */
+
 #cookie-banner p {
   font-size: 14px;
 }
