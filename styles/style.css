@@ -166,6 +166,7 @@ main button:hover{
   max-width: 200px;
   border-radius: 10px;
   font-weight: bold;
+  direction: ltr;
 }
 
 
