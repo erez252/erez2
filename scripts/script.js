@@ -48,10 +48,12 @@ document.getElementById("theme_buttons_con").onclick = function(){
 
 if(localStorage.getItem(`deg_select`) == `C`){
     document.getElementById("C").checked = true
+    document.getElementById("deg").textContent = "°F"
 }
 
 if(localStorage.getItem(`deg_select`) == `F`){
     document.getElementById("F").checked = true
+    document.getElementById("deg").textContent = "°C"
 }
 
 setTimeout(function() {
