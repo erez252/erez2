@@ -1,7 +1,38 @@
 let userLang = navigator.language;
 userLang = userLang.split("-")[0];
 let temp;
+
 document.getElementById("input").value = localStorage.getItem(`input`) || 1;
+
+document.body.classList.add("no-transition")
+document.getElementById("hide_theme").classList.add("no-transition");
+
+if(localStorage.getItem("dark")){
+    document.body.classList.add("dark")
+}
+else if(window.matchMedia("(prefers-color-scheme: dark)").matches &&!(localStorage.getItem("light"))){
+    document.body.classList.add("dark")
+}
+else{
+    document.body.classList.remove("dark")
+}
+
+document.getElementById("theme_buttons_con").onclick = function(){
+    document.body.classList.toggle("dark")
+
+    if(document.body.classList.contains("dark")){
+        localStorage.removeItem("light")
+        localStorage.setItem("dark", true)
+    }
+    else{
+        localStorage.removeItem("dark")
+        localStorage.setItem("light", true)
+    }
+}
+
+setTimeout(function() {
+    document.body.classList.remove("no-transition");
+}, 10);
 
 document.getElementById("C").onclick = function(){
     document.getElementById("deg").textContent = "°F"
@@ -46,6 +77,8 @@ document.getElementById("button").onclick = function(){
 
     localStorage.setItem(`input`, input);
 }
+
+
 
 
 

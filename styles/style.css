@@ -6,8 +6,83 @@
     box-sizing: border-box;
 }
 
+.no-transition{
+  transition: inherit;
+  transition: none;
+}
+
+
+body{
+  --text-color: rgb(0, 0, 0);
+  --background-color: rgb(255, 255, 255);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+
+body.dark{
+  --text-color: rgb(255, 254, 254);
+  --background-color: rgb(0, 0, 0);
+
+}
+
+#theme_buttons_con {
+  user-select: none;
+  border-radius: 15px;
+  border: 2px solid var(--text-color);
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+  cursor: pointer; 
+  align-items: center; /* Align items vertically */
+  bottom: 10px;
+  left: 20px;
+}
+
+
+.theme_buttons {
+/* Indicate clickable buttons */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+}
+
+
+#theme_buttons_con svg{
+  fill: var(--text-color);
+  transition: fill 0.2s ease;
+}
+
+body.dark #theme_buttons_con{
+  border: 2px solid var(--text-color);
+}
+
+body.dark #theme_buttons_con svg{
+  fill: var(--text-color);
+}
+
+#hide_theme {
+  border-radius: 50%;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: var(--text-color);
+  top: 50%; /* Center vertically */
+  left: 22%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease; /* Smooth transition for movement */
+}
+
+body.dark #hide_theme{
+  left: 78%;
+  background-color: var(--text-color);
+}
+
 .langbut{
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     cursor: pointer;
     user-select: none;
@@ -32,8 +107,8 @@
 body{
     min-height: 100%;
     font-family: sans-serif;
-    background-color: black;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-size: 4rem;
 }
 
@@ -118,7 +193,7 @@ main button:hover{
     position: relative;
     margin: 0px 15px 15px 15px;
     vertical-align: middle;
-    border: 4px dotted rgb(255, 255, 255);
+    border: 4px dotted var(--text-color);
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -134,13 +209,14 @@ main button:hover{
 #F:checked::before, #C:checked::before{
     content: "";
     position: absolute;
-    background-color: white;
+    background-color: var(--background-color);
     height: 30px;
     width: 30px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
 #F:hover:not(:checked), #C:hover:not(:checked){
