@@ -8,10 +8,9 @@ else{
     document.body.classList.remove("dark")
 };
 
-const userLang = localStorage.getItem(`lang`) || navigator.language.split("-")[0]
-const preferdlang = userLang == "he"? "he": "en"
-window.location.href = `./${preferdlang}`
-
+const userLang = localStorage.getItem(`lang`) || navigator.language.split("-")[0];
+const preferdlang = userLang == "he"? "he": "en";
+window.location.href = `./${preferdlang}`;
 
 
 
