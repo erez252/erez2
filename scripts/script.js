@@ -1,6 +1,6 @@
 let userLang = navigator.language;
 userLang = userLang.split("-")[0];
-const pagelang = window.location.pathname.split("/").filter(Boolean)[1];
+let pagelang = window.location.pathname.split("/").filter(Boolean)[1];
 localStorage.setItem(`lang`, pagelang);
 console.log(localStorage.getItem(`lang`))
 
@@ -28,13 +28,13 @@ if(localStorage.getItem("accept-cookies")){
     document.getElementById('cookie-banner').style.display = 'none';
 }
 else{
-    document.getElementsByClassName('langbut')[0].style.bottom = document.getElementById("cookie-banner").offsetHeight + 10 + "px";
+    document.getElementsByClassName('atag')[0].style.bottom = document.getElementById("cookie-banner").offsetHeight + 10 + "px";
 }
 
 document.getElementById('accept-cookies').onclick = function() {
     document.getElementById('cookie-banner').style.display = 'none';
     localStorage.setItem("accept-cookies", true);
-    document.getElementsByClassName('langbut')[0].style.bottom = "10px";
+    document.getElementsByClassName('atag')[0].style.bottom = "0px";
 }
 
 document.getElementById("theme_buttons_con").onclick = function(){
