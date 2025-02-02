@@ -1,5 +1,7 @@
 let userLang = navigator.language;
 userLang = userLang.split("-")[0];
+let pagelang = window.location.pathname.split("/").filter(Boolean)[0];
+localStorage.setItem(`lang`, pagelang)
 let temp;
 
 document.getElementById("input").value = localStorage.getItem(`input`) || 1;
@@ -76,7 +78,6 @@ document.getElementById("F").onclick = function(){
 
 document.getElementById("button").onclick = function(){
     let input = Number(document.getElementById("input").value);
-    let pagelang = window.location.pathname.split("/").filter(Boolean)[1];
 
     if (!pagelang) {
         pagelang = "en";

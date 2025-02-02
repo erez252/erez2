@@ -1,12 +1,42 @@
-let userLang = navigator.language;
-userLang = userLang.split("-")[0];
-console.log(userLang);
-let lang;
-
-if(userLang == "he"){
-    window.location.href = "./he"
+if(localStorage.getItem("dark")){
+    document.body.classList.add("dark")
+}
+else if(window.matchMedia("(prefers-color-scheme: dark)").matches &&!(localStorage.getItem("light"))){
+    document.body.classList.add("dark")
 }
 else{
-    window.location.href = "./en" 
-}
+    document.body.classList.remove("dark")
+};
+
+const userLang = localStorage.getItem(`lang`) || navigator.language.split("-")[0]
+const preferdlang = userLang == "he"? "he": "en"
+window.location.href = `./${preferdlang}`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
