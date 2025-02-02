@@ -2,7 +2,6 @@ let userLang = navigator.language;
 userLang = userLang.split("-")[0];
 const pagelang = window.location.pathname.split("/").filter(Boolean)[1];
 localStorage.setItem(`lang`, pagelang);
-console.log(localStorage.getItem(`lang`))
 
 let temp;
 
