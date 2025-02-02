@@ -49,7 +49,6 @@ body.dark{
   bottom: 10px;
   left: 10px;
   background-color: transparent;
-  z-index: -2;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
